@@ -7,7 +7,6 @@ const Navbar = () => {
       <div className="font-bold text-blue-600 text-xl ">Linkify🔗</div>
       <ul className="items-center text-sm flex gap-5">
         <Link href="/">
-          {" "}
           <li>Home</li>
         </Link>
         <Link href="/about">
@@ -19,12 +18,16 @@ const Navbar = () => {
         <Link href="/contact">
           <li>Contact</li>
         </Link>
-        <li className="flex gap-3 ">
+        <li className="flex gap-4 ">
           <Link href="/generate">
-            <button>Get Started</button>
+            <button className="bg-gray-900  shadow-lg  rounded-lg p-3">
+              Get Started
+            </button>
           </Link>
           <Link href="/github">
-            <button>GitHub</button>
+            <button className="bg-gray-700 shadow-lg  rounded-lg p-3">
+              GitHub
+            </button>
           </Link>
         </li>
       </ul>
