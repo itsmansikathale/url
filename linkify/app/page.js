@@ -1,5 +1,9 @@
 import Image from "next/image";
 
 export default function Home() {
-  return <main>I am the Main Page</main>;
+  return (
+    <main>
+      <section className="grid grid-cols-2"></section>
+    </main>
+  );
 }
