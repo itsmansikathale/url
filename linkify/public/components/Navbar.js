@@ -13,7 +13,7 @@ const Navbar = () => {
           <li>About</li>
         </Link>
         <Link href="/generate">
-          <li>Shortner</li>
+          <li>Shorten</li>
         </Link>
         <Link href="/contact">
           <li>Contact</li>
