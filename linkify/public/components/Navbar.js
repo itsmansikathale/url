@@ -1,11 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="h-18 items-center flex justify-between px-3 text-white bg-gray-800">
-      <div className="font-bold text-blue-600 text-xl ">Linkify🔗</div>
-      <ul className="items-center text-sm flex gap-5">
+    <nav className="h-18 items-center flex justify-between px-3 text-white bg-gray-800 ">
+      <div className="font-bold text-blue-700 text-3xl ">
+        <Image src="/images/logo(2).png" alt="Linkify" width={30} height={30} />
+      </div>
+      <ul className="items-center text-sm flex gap-5 mr-20">
         <Link href="/">
           <li>Home</li>
         </Link>
@@ -20,12 +23,12 @@ const Navbar = () => {
         </Link>
         <li className="flex gap-4 ">
           <Link href="/generate">
-            <button className="bg-gray-900  shadow-lg  rounded-lg p-3">
+            <button className="bg-gray-700  shadow-lg  rounded-lg p-3">
               Get Started
             </button>
           </Link>
           <Link href="/github">
-            <button className="bg-gray-700 shadow-lg  rounded-lg p-3">
+            <button className="bg-gray-900 shadow-lg  rounded-lg p-3">
               GitHub
             </button>
           </Link>
