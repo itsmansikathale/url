@@ -27,7 +27,7 @@ export default function Home() {
           />
         </div>
         <div className="flex gap-4  ml-65">
-          <Link href="/generate">
+          <Link href="/shorten">
             <button className="bg-gray-700 text-white shadow-lg  rounded-lg p-3">
               Get Started
             </button>

@@ -8,7 +8,7 @@ const Shorten = () => {
   const [generated, setGenerated] = useState(false);
 
   return (
-    <div className="mx-auto max-w-lg bg-gray-300 flex flex-col my-16 p-8 rounded-lg gap-6 ">
+    <div className="mx-auto max-w-lg bg-gray-400 flex flex-col my-16 p-8 rounded-lg gap-6 ">
       <h1 className="font-bold text-black text-xl ">
         Simplify your sharing — Linkify makes it easy.
       </h1>

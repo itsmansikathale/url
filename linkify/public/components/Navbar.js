@@ -5,8 +5,10 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className="h-18 items-center flex justify-between px-3 text-white bg-gray-800 ">
-      <div className="font-bold text-blue-700 text-3xl ">
-        Linkify
+      <div className="font-bold text-blue-700 text-2xl ">
+        <Link href="/">
+          <li>🖇️Linkify</li>
+        </Link>
         {/* <Image src="/images/logo(2).png" alt="Linkify" width={30} height={30} /> */}
       </div>
       <ul className="items-center text-sm flex gap-5 mr-20">
@@ -16,14 +18,14 @@ const Navbar = () => {
         <Link href="/about">
           <li>About</li>
         </Link>
-        <Link href="/generate">
+        <Link href="/shorten">
           <li>Shorten</li>
         </Link>
         <Link href="/contact">
           <li>Contact</li>
         </Link>
         <li className="flex gap-4 ">
-          <Link href="/generate">
+          <Link href="/shorten">
             <button className="bg-gray-700  shadow-lg  rounded-lg p-3">
               Get Started
             </button>
