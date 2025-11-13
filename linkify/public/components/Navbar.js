@@ -6,7 +6,8 @@ const Navbar = () => {
   return (
     <nav className="h-18 items-center flex justify-between px-3 text-white bg-gray-800 ">
       <div className="font-bold text-blue-700 text-3xl ">
-        <Image src="/images/logo(2).png" alt="Linkify" width={30} height={30} />
+        Linkify
+        {/* <Image src="/images/logo(2).png" alt="Linkify" width={30} height={30} /> */}
       </div>
       <ul className="items-center text-sm flex gap-5 mr-20">
         <Link href="/">

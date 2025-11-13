@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <main>
       <section className="grid grid-cols-2 h-[50vh]">
-        <div className="bg-white flex flex-col pb-10 mt-40 ml-20 gap-4">
-          <p className="text-3xl font-bold text-center ">
+        <div className="bg-black flex flex-col pb-10 mt-40 ml-20 gap-4">
+          <p className="text-3xl font-bold text-center bg-black ">
             One short link, Infinite possibilities.
           </p>
           <p className="px-12 text-center">
@@ -18,12 +18,12 @@ export default function Home() {
         </div>
 
         {/* Right Side */}
-        <div className="bg-white  mt-18 flex jusify-center items-center overflow-hidden relative">
+        <div className="bg-black  mt-18 flex jusify-center items-center overflow-hidden relative">
           <Image
             src={"/vector2.jpg"}
             alt="A URL professional Image"
             fill={true}
-            className="object-contain md:object-cover object-center  opacity-90"
+            className="object-contain  md:object-cover object-center  opacity-90"
           />
         </div>
         <div className="flex gap-4  ml-65">
