@@ -5,9 +5,9 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav className="h-18 items-center flex justify-between px-3 text-white bg-gray-800 ">
-      <div className="font-bold text-blue-700 text-2xl ">
+      <div className="font-extrabold text-blue-700 text-2xl ">
         <Link href="/">
-          <li>🖇️Linkify</li>
+          <li>Linkify</li>
         </Link>
         {/* <Image src="/images/logo(2).png" alt="Linkify" width={30} height={30} /> */}
       </div>
