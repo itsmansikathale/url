@@ -1,12 +1,21 @@
 import clientPromise from "@/lib/mongodb";
 
 export async function POST(request) {
-  const body = request.json();
+  const body = await request.json();
   const client = await clientPromise;
   const db = client.db("linkify");
   const collection = db.collection("url");
 
   //  Here we are checking if the short url Exists or not ?
+  const doc = await collection.findOne({ shorturl: body.shorturl });
+  if (doc) {
+    return Response.json({
+      success: false,
+      error: true,
+      message: "URL Already Exists!",
+    });
+  }
+
   const result = await collection.insertOne({
     url: body.url,
     shorturl: body.shorturl,

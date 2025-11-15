@@ -1,12 +1,36 @@
 "use client";
 
 import React, { useState } from "react";
+import { resume } from "react-dom/server";
 
 const Shorten = () => {
   const [url, seturl] = useState("");
   const [shorturl, setshorturl] = useState("");
   const [generated, setGenerated] = useState(false);
+  const generate = () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    const raw = JSON.stringify({
+      url: url,
+      shorturl: shorturl,
+    });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("/api/generate", requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        alert(result.message);
+      })
+      .catch((error) => console.error(error));
+  };
   return (
     <div className="mx-auto max-w-lg bg-gray-400 flex flex-col my-16 p-8 rounded-lg gap-6 ">
       <h1 className="font-bold text-black text-xl ">
@@ -31,7 +55,10 @@ const Shorten = () => {
             setshorturl(e.target.value);
           }}
         />
-        <button className="bg-gray-800 my-4 shadow-lg text-white rounded-lg p-3">
+        <button
+          onClick={generate}
+          className="bg-gray-800 my-4 shadow-lg text-white rounded-lg p-3"
+        >
           Create
         </button>
       </div>
