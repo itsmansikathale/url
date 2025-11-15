@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { resume } from "react-dom/server";
 
 const Shorten = () => {
   const [url, seturl] = useState("");
   const [shorturl, setshorturl] = useState("");
-  const [generated, setGenerated] = useState(false);
+  const [generated, setGenerated] = useState("");
   const generate = () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -26,6 +27,9 @@ const Shorten = () => {
     fetch("/api/generate", requestOptions)
       .then((response) => response.json())
       .then((result) => {
+        setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        seturl("");
+        setshorturl("");
         console.log(result);
         alert(result.message);
       })
@@ -62,6 +66,17 @@ const Shorten = () => {
           Create
         </button>
       </div>
+      {generated && (
+        <>
+          {" "}
+          <span className="font-semibold text-black">Your Link:</span>
+          <code>
+            <Link className="text-gray-800" target="_blank" href={generated}>
+              {generated}
+            </Link>
+          </code>
+        </>
+      )}
     </div>
   );
 };
