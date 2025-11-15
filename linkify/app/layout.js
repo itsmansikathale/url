@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/public/components/Navbar";
 import { ThemeProvider } from "../public/components/theme-provider";
 import Footer from "@/public/components/Footer";
+import Shorten from "./shorten/page";
+import About from "./about/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +42,8 @@ export default function RootLayout({ children }) {
         >
           <Navbar />
           {children}
+          <About />
+          <Shorten />
           <Footer />
         </ThemeProvider>
       </body>
