@@ -14,9 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Linkify – The Smart URL Shortener",
+  title: "Linkify – Free Custom URL Shortener | Shorten Long Links Instantly",
   description:
-    "GeLinkify makes sharing links simple, fast, and powerful.Turn long, messy URLs into short, clean, and trackable links in seconds. Whether you’re sharing on social media, sending in emails, or managing campaigns — Linkify helps you do it all with ease.",
+    "Linkify is a free and fast online URL shortener that lets you shorten long links instantly. Create custom short URLs, share easily, and boost your branding.",
+  keywords:
+    "URL shortener, link shortener, short URL generator, shorten links, custom short URL, free link shortener, long to short link converter",
+  authors: [{ name: "Linkify" }],
+  creator: "Linkify",
+  locale: "en_US",
+  type: "website",
 };
 
 export default function RootLayout({ children }) {
