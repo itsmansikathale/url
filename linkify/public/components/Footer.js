@@ -12,7 +12,7 @@ export default function Footer() {
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-gray-300">
               Shorten long URLs into clean, custom, shareable links.
-              <br /> Fast . Secure . Free
+              <br /> Fast • Secure • Free
             </p>
           </div>
 
