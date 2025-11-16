@@ -36,7 +36,7 @@ export default function About() {
 
         {/* section 2 */}
         <section className="bg-white rounded-2xl shadow p-8 mb-10">
-          <h2 text-2xl font-bold text-gray-800 mb-4>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Why I Built This ?
           </h2>
           <p className="text-gray-600 leading-relaxed">

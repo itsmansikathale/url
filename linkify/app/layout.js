@@ -5,6 +5,7 @@ import { ThemeProvider } from "../public/components/theme-provider";
 import Footer from "@/public/components/Footer";
 import Shorten from "./shorten/page";
 import About from "./about/page";
+import Contact from "./contact/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
           {children}
           <About />
           <Shorten />
+          <Contact />
           <Footer />
         </ThemeProvider>
       </body>
