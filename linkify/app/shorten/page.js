@@ -36,15 +36,18 @@ const Shorten = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="mx-auto max-w-lg bg-gray-400 flex flex-col my-16 p-8 rounded-lg gap-6 ">
-      <h1 className="font-bold text-black text-xl ">
-        Simplify your sharing — Linkify makes it easy.
+    <div className="mx-auto max-w-lg bg-gray-900 flex flex-col my-16 p-8 rounded-lg gap-6 ">
+      <h1 className="text-2xl font-extrabold text-white text-center mb-6">
+        Shorten Your Link
       </h1>
+      <p className="font-bold text-white text-lg ">
+        Simplify your sharing — Linkify makes it easy.
+      </p>
       <div className="flex flex-col gap-2 ">
         <input
           type="text"
           value={url}
-          className="px-4 py-4 text-black focus:outline-gray-700 rounded-md"
+          className="px-4 py-4 text-gray-300 focus:outline-gray-700 rounded-md"
           placeholder="Enter / Paste Your URL"
           onChange={(e) => {
             seturl(e.target.value);
@@ -53,25 +56,24 @@ const Shorten = () => {
         <input
           type="text"
           value={shorturl}
-          placeholder="Paste Your YouTube Video Link Here"
-          className="px-4 py-4  text-black focus:outline-gray-700 rounded-md"
+          placeholder="Make your long URL Small"
+          className="px-4 py-4  text-gray-300 focus:outline-gray-700 rounded-md"
           onChange={(e) => {
             setshorturl(e.target.value);
           }}
         />
         <button
           onClick={generate}
-          className="bg-gray-800 my-4 shadow-lg text-white rounded-lg p-3"
+          className="bg-gradient-to-r from-blue-800 to-gray-700  my-4 shadow-lg text-white rounded-lg p-3"
         >
           Create
         </button>
       </div>
       {generated && (
         <>
-          {" "}
-          <span className="font-semibold text-black">Your Link:</span>
+          <span className="font-semibold text-gray-300">Your Link:</span>
           <code>
-            <Link className="text-gray-800" target="_blank" href={generated}>
+            <Link className="text-gray-400" target="_blank" href={generated}>
               {generated}
             </Link>
           </code>
