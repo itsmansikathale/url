@@ -11,10 +11,10 @@ export default function Footer() {
             <Image
               src={"/Linkify_rb.png"}
               alt="Linkify"
-              width={160}
-              height={160}
+              width={190}
+              height={190}
             />
-            <p className="mt-4 text-sm leading-relaxed text-gray-800">
+            <p className=" text-sm leading-relaxed text-gray-800">
               Shorten long URLs into clean, custom, shareable links.
               <br /> Fast • Secure • Free
             </p>
