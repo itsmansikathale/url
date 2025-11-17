@@ -1,34 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
-  async function handleSubmit(e) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const form = new FormData(e.target);
-    const data = {
-      name: form.get("name"),
-      name: form.get("email"),
-      name: form.get("message"),
-    };
 
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ name, email, message }),
     });
 
-    const result = await res.json();
-    if (result.success) {
-      alert("Your message has been sent!");
-      e.target.reset();
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Message sent successfully");
+      setName("");
+      setEmail("");
+      setMessage("");
     } else {
-      alert("Eror: " + result.error);
+      alert("Failed to send message.");
     }
-  }
+
+    if (data.success) {
+      alert("Message sent successfully!");
+    } else {
+      alert("Failed to send message.");
+    }
+  };
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center px-4 py-10">
       <div className="bg-white shadow-lg rounded-2xl max-w-lg w-full p-8">
@@ -45,6 +50,8 @@ export default function Contact() {
             <label className="block text-gray-700 font-medium mb-1">Name</label>
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="w-full p-3 border text-gray-600 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               placeholder="Enter Your Name"
             />
@@ -56,6 +63,8 @@ export default function Contact() {
             </label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 border border-gray-300 text-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               placeholder="Enter Your Email"
             />
@@ -66,14 +75,16 @@ export default function Contact() {
             </label>
             <textarea
               rows="5"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full p-3 border text-gray-600 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               placeholder="Write Your Message Here ....."
             ></textarea>
           </div>
           <button
             type="submit"
-            onSubmit={handleSubmit}
-            className="w-full bg-blur-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all 
+            // onSubmit={handleSubmit}
+            className="w-full bg-blur-600  text-white py-3 rounded-lg font-semibold hover:bg-gray-700 transition-all 
             "
           >
             Send Message
