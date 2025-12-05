@@ -23,18 +23,18 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold text-gray-800 mb-4">Follow Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>
+              {/* <li>
                 <a href="#" className="hover:text-white transition">
                   GitHub
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="#" className="hover:text-purple-600 transition">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="#" className="hover:text-purple-600 transition">
                   Instagram
                 </a>
               </li>
@@ -70,7 +70,7 @@ export default function Footer() {
           </div> */}
         </div>
       </div>
-      <div className="border-t border-gray-700 mt-10 pt-5">
+      <div className="border-t border-gray-700 mt-6 mb-10 pt-5">
         <p className="text-center text-sm text-gray-500">
           © {new Date().getFullYear()} Linkify. All rights reserved
         </p>
