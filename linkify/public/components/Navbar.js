@@ -9,7 +9,7 @@ const Navbar = () => {
     <nav className="h-18 items-center flex justify-between px-4 text-white bg-gray-200 relative">
       {/* <div className="font-extrabold text-blue-700 text-2xl "> */}
       {/* <Link href="/Linkify_rb.png"></Link> */}
-      <Image src={"/Linkify_rb.png"} alt="Linkify" width={200} height={180} />
+      <Image src={"/icon.png"} alt="Linkify" width={200} height={180} />
       {/* <Image
           src={"/h5.jpg"}
           alt="A URL professional Image"

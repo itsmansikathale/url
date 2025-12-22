@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { resume } from "react-dom/server";
@@ -36,18 +37,20 @@ const Shorten = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="mx-auto max-w-lg bg-gray-900 flex flex-col my-16 p-8 rounded-lg gap-6 ">
-      <h1 className="text-2xl font-extrabold text-white text-center mb-6">
-        Shorten Your Link
+    <div className="mx-auto max-w-lg bg-gray-200 flex flex-col my-16 p-8 rounded-lg gap-6 ">
+      <div className="flex items-center justify-center h-20 ">
+        <Image src={"/icon.png"} alt="Linkify" width={200} height={180} />
+      </div>
+      <h1 className="text-lg mb-2 font-bold text-blue-900  text-center mb-6">
+        Shorten & Simplify your Links
+        <br />— Linkify makes it easy.
       </h1>
-      <p className="font-bold text-white text-lg ">
-        Simplify your sharing — Linkify makes it easy.
-      </p>
+
       <div className="flex flex-col gap-2 ">
         <input
           type="text"
           value={url}
-          className="px-4 py-4 text-gray-300 focus:outline-gray-700 rounded-md"
+          className="px-4 py-4 text-gray-900 focus:outline-blue-700 rounded-md"
           placeholder="Enter / Paste Your URL"
           onChange={(e) => {
             seturl(e.target.value);
@@ -57,7 +60,7 @@ const Shorten = () => {
           type="text"
           value={shorturl}
           placeholder="Make your long URL Small"
-          className="px-4 py-4  text-gray-300 focus:outline-gray-700 rounded-md"
+          className="px-4 py-4  text-gray-900 focus:outline-blue-700 rounded-md"
           onChange={(e) => {
             setshorturl(e.target.value);
           }}
